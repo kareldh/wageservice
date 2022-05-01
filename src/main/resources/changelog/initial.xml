@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="11d06e8b-8a8a-4be3-b322-6626d5177e69" author="Karel D'haene">
+        <createTable tableName="wage">
+            <column name="id" type="uuid" defaultValueComputed="gen_random_uuid()">
+                <constraints primaryKey="true" primaryKeyName="Wage_id_pk"/>
+            </column>
+            <column name="personId" type="uuid"/>
+            <column name="yearly" type="decimal(10,2)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

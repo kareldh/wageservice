@@ -1,0 +1,16 @@
+GET http://localhost:8080/actuator/loggers
+
+###
+
+GET http://localhost:8080/actuator/loggers/org.springframework.jdbc.core
+
+###
+
+POST http://localhost:8080/actuator/loggers/org.springframework.jdbc.core
+content-type: application/json
+
+{
+  "configuredLevel": "DEBUG"
+}
+
+###

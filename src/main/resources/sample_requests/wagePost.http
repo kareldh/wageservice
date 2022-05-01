@@ -1,0 +1,7 @@
+POST http://localhost:8080/api/wage
+content-type: application/json
+
+{
+  "personId": "f72e531a-fed2-4934-aa6e-6c1321e82fdc",
+  "yearly": 30000.00
+}

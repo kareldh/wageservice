@@ -1,0 +1,2 @@
+GET http://localhost:8080/api/wage/fb2babaf-1da6-4579-9194-4e4f313f2765
+accept: application/json
