@@ -8,6 +8,7 @@ wageservice:
     wages:
       change-log: classpath:/changelog/master.xml
 
+
 management:
   endpoint:
     health:
@@ -27,3 +28,7 @@ logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter: debug
 
 server:
   port: 8080
+
+integration:
+  personservice:
+    base-url: http://127.0.0.1:8081

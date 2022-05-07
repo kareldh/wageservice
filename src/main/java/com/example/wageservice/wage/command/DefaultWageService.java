@@ -1,7 +1,7 @@
-package com.example.wageservice.command;
+package com.example.wageservice.wage.command;
 
-import com.example.wageservice.model.Wage;
-import com.example.wageservice.repository.WageRepository;
+import com.example.wageservice.wage.model.Wage;
+import com.example.wageservice.wage.repository.WageRepository;
 import org.springframework.stereotype.Service;
 
 @Service

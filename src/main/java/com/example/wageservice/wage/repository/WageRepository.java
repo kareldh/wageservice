@@ -1,6 +1,6 @@
-package com.example.wageservice.repository;
+package com.example.wageservice.wage.repository;
 
-import com.example.wageservice.model.Wage;
+import com.example.wageservice.wage.model.Wage;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

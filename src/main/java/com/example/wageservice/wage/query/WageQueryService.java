@@ -1,6 +1,6 @@
-package com.example.wageservice.query;
+package com.example.wageservice.wage.query;
 
-import com.example.wageservice.model.Wage;
+import com.example.wageservice.wage.model.Wage;
 
 import java.util.Optional;
 import java.util.UUID;

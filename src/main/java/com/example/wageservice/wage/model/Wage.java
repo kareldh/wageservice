@@ -1,4 +1,4 @@
-package com.example.wageservice.model;
+package com.example.wageservice.wage.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.data.annotation.Id;
