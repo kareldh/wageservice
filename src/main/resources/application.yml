@@ -19,6 +19,9 @@ management:
         time-to-live: 10s
       probes:
         enabled: true
+      group:
+        command.include: personService, db
+        query.include: db
   endpoints:
     web:
       exposure:
