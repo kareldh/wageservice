@@ -4,6 +4,7 @@ import com.example.wageservice.person.integration.config.PersonServiceClientProp
 import com.example.wageservice.person.integration.converter.PersonConverter;
 import com.example.wageservice.person.model.Person;
 import com.example.wageservice.person.query.PersonQueryService;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -11,6 +12,7 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 import reactor.core.publisher.Mono;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -45,6 +47,13 @@ public class PersonServiceClient implements PersonQueryService {
     }
 
     public boolean isUp() {
-        return true;//todo
+        return Boolean.TRUE.equals(personServiceWebClient.get()
+                .uri(uriBuilder -> uriBuilder.path(personServiceClientProperties.getIsUp()).build().normalize())
+                .accept(MediaType.valueOf(personServiceClientProperties.getHealthContentType()))
+                .retrieve()
+                .bodyToMono(JsonNode.class)
+                .map(jsonNode -> Objects.equals(jsonNode.get("status").asText(), "UP"))
+                .onErrorResume(WebClientResponseException.ServiceUnavailable.class, notFound -> Mono.just(false))
+                .block());
     }
 }

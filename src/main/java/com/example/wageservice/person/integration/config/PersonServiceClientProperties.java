@@ -4,6 +4,7 @@ public class PersonServiceClientProperties {
     private String baseUrl;
     private String getPerson = "/api/person/{id}";
     private String isUp = "/actuator/health";
+    private String healthContentType = "application/vnd.spring-boot.actuator.v3+json";
 
     public String getBaseUrl() {
         return baseUrl;
@@ -27,5 +28,13 @@ public class PersonServiceClientProperties {
 
     public void setIsUp(String isUp) {
         this.isUp = isUp;
+    }
+
+    public String getHealthContentType() {
+        return healthContentType;
+    }
+
+    public void setHealthContentType(String healthContentType) {
+        this.healthContentType = healthContentType;
     }
 }
