@@ -1,5 +1,6 @@
 package com.example.wageservice.wage.command;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +11,8 @@ import java.util.Optional;
 
 @Component
 public class YearlyWageCalculator {
-    //todo hier gaan we @Cacheable op steken
+
+    @Cacheable(value = "yearlyWage")
     public BigDecimal calculateYearly(LocalDate contractStartDate, @Nullable LocalDate contractEndDate) {
         long yearsEmployed = ChronoUnit.YEARS.between(contractStartDate, Optional.ofNullable(contractEndDate).orElseGet(LocalDate::now));
         if (yearsEmployed > 3) {

@@ -1,1 +1,7 @@
 GET http://localhost:8080/actuator/caches
+
+###
+
+DELETE http://localhost:8080/actuator/caches/yearlyWage
+
+###
