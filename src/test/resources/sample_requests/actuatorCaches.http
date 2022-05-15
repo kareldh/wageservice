@@ -1,7 +1,7 @@
-GET http://localhost:8080/actuator/caches
+GET http://localhost:8080/wageservice/actuator/caches
 
 ###
 
-DELETE http://localhost:8080/actuator/caches/yearlyWage
+DELETE http://localhost:8080/wageservice/actuator/caches/yearlyWage
 
 ###

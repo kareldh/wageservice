@@ -1,1 +1,15 @@
-GET http://localhost:8080/actuator/health
+GET http://localhost:8080/wageservice/actuator/health
+
+###
+
+GET http://localhost:8080/wageservice/actuator/health/query
+
+###
+
+GET http://localhost:8080/wageservice/actuator/health/command
+
+###
+
+GET http://localhost:8080/wageservice/actuator/health/readiness
+
+###

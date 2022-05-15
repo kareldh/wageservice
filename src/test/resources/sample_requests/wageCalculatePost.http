@@ -1,2 +1,2 @@
-POST http://localhost:8080/api/wage/person/d05a9338-d3e9-4cae-840a-a829c3480cc8
+POST http://localhost:8080/wageservice/api/wage/person/d05a9338-d3e9-4cae-840a-a829c3480cc8
 Accept: application/json
