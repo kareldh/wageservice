@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class LivenessEventListener {
-    Logger LOG = LoggerFactory.getLogger(LivenessEventListener.class);
+    private static final Logger LOG = LoggerFactory.getLogger(LivenessEventListener.class);
 
     @EventListener
     public void onEvent(AvailabilityChangeEvent<LivenessState> event) {

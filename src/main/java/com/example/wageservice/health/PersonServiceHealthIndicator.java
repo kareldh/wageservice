@@ -1,6 +1,8 @@
 package com.example.wageservice.health;
 
 import com.example.wageservice.person.integration.PersonServiceClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
@@ -9,6 +11,8 @@ import java.time.Instant;
 
 @Component
 public class PersonServiceHealthIndicator implements HealthIndicator {
+    private static final Logger LOG = LoggerFactory.getLogger(PersonServiceHealthIndicator.class);
+
     private final PersonServiceClient personServiceClient;
 
     public PersonServiceHealthIndicator(PersonServiceClient personServiceClient) {
@@ -17,6 +21,7 @@ public class PersonServiceHealthIndicator implements HealthIndicator {
 
     @Override
     public Health health() {
+        LOG.trace("Checking health PersonService");
         try {
             if (personServiceClient.isUp()) {
                 return Health.up()

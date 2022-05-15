@@ -7,7 +7,13 @@ wageservice:
   liquibase:
     wages:
       change-log: classpath:/changelog/master.xml
+  scheduling:
+    scheduledAvailabilityUpdates:
+      milliseconds: 5000
 
+spring:
+  application:
+    name: wageservice
 
 management:
   endpoint:
@@ -20,18 +26,26 @@ management:
       probes:
         enabled: true
       group:
-        command.include: personService, db
-        query.include: db
+        command.include: personService, wageDataSource
+        query.include: wageDataSource
+  #  health.db.enabled: false
   endpoints:
     web:
       exposure:
         include: health, loggers, metrics, caches
 
-logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter: debug
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: debug
+    #    reactor.netty.http.client.HttpClientConnect: debug
+    com.example.wageservice.health.PersonServiceHealthIndicator: trace
+    com.example.wageservice.health.WageDataSourceHealthIndicator: trace
 
 server:
   port: 8080
+  servlet:
+    contextPath: /${spring.application.name}
 
 integration:
   personservice:
-    base-url: http://127.0.0.1:8081
+    base-url: http://127.0.0.1:8081/personservice

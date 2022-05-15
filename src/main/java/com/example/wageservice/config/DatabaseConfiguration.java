@@ -18,7 +18,7 @@ public class DatabaseConfiguration {
 
     @Bean
     @ConfigurationProperties(prefix = "wageservice.datasource.wages.configuration")
-    public DataSource hrDataSource(DataSourceProperties wagesDataSourceProperties) {
+    public DataSource wageDataSource(DataSourceProperties wagesDataSourceProperties) {
         return wagesDataSourceProperties.initializeDataSourceBuilder().build();
     }
 

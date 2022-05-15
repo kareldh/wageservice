@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ReadinessEventListener {
-    Logger LOG = LoggerFactory.getLogger(ReadinessEventListener.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ReadinessEventListener.class);
 
     @EventListener
     public void onEvent(AvailabilityChangeEvent<ReadinessState> event) {
