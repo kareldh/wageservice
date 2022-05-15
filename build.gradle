@@ -12,6 +12,10 @@ repositories {
 	mavenCentral()
 }
 
+//ext {
+//	set('springBootAdminVersion', "2.6.5")
+//}
+
 dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -38,7 +42,16 @@ dependencies {
 	//test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
+
+//	//spring boot admin
+//	implementation 'de.codecentric:spring-boot-admin-starter-client'
 }
+
+//dependencyManagement {
+//	imports {
+//		mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+//	}
+//}
 
 tasks.named('test') {
 	useJUnitPlatform()

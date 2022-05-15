@@ -14,6 +14,10 @@ wageservice:
 spring:
   application:
     name: wageservice
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:8082
 
 management:
   endpoint:
@@ -32,12 +36,13 @@ management:
   endpoints:
     web:
       exposure:
+#        include: '*'
         include: health, loggers, metrics, caches
 
 logging:
   level:
     org.springframework.web.filter.CommonsRequestLoggingFilter: debug
-    #    reactor.netty.http.client.HttpClientConnect: debug
+#    reactor.netty.http.client.HttpClientConnect: debug
     com.example.wageservice.health.PersonServiceHealthIndicator: trace
     com.example.wageservice.health.WageDataSourceHealthIndicator: trace
 
