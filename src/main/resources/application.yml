@@ -4,6 +4,10 @@ wageservice:
       url: jdbc:postgresql://localhost:5432/hr?currentSchema=wages
       username: postgres
       password: postgres
+      configuration:
+        pool-name: person pool
+        type: com.zaxxer.hikari.HikariDataSource
+        connectionTimeout: 1000
   liquibase:
     wages:
       change-log: classpath:/changelog/master.xml
@@ -32,7 +36,7 @@ management:
       group:
         command.include: personService, wageDataSource
         query.include: wageDataSource
-  #  health.db.enabled: false
+#  health.db.enabled: false
   endpoints:
     web:
       exposure:
