@@ -25,25 +25,25 @@ spring:
 #        instance:
 #          service-host-type: ip # because otherwise axians laptop default resolves to http://L-5CG851057W-XT.veibe.net:8081
 
-#management:
-#  endpoint:
-#    health:
-#      enabled: true
-#      show-components: always
-#      show-details: always
-#      cache:
-#        time-to-live: 10s
-#      probes:
-#        enabled: true
-#      group:
-#        command.include: personService, wageDataSource
-#        query.include: wageDataSource
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-components: always
+      show-details: always
+      cache:
+        time-to-live: 10s
+      probes:
+        enabled: true
+      group:
+        command.include: personService, wageDataSource
+        query.include: wageDataSource
 #  health.db.enabled: false
-#  endpoints:
-#    web:
-#      exposure:
+  endpoints:
+    web:
+      exposure:
 #        include: '*'
-#        include: health, loggers, metrics, caches
+        include: health, loggers, metrics, caches
 
 logging:
   level:
