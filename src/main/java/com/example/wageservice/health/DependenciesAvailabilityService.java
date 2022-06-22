@@ -2,12 +2,11 @@ package com.example.wageservice.health;
 
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.boot.actuate.health.Status;
-import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Service
+//@Service
 public class DependenciesAvailabilityService {
     private final Set<HealthIndicator> contributors = new HashSet<>();
 

@@ -7,9 +7,8 @@ import org.springframework.boot.availability.AvailabilityChangeEvent;
 import org.springframework.boot.availability.ReadinessState;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class AvailabilityService {
     private static final Logger LOG = LoggerFactory.getLogger(AvailabilityService.class);
 
